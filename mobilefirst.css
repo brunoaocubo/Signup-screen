@@ -137,6 +137,10 @@ header{
 
 
 .error{
-    background: url(images/icon-error.svg) no-repeat left center;
-    background-position-x: 20px;
+    background: url(images/icon-error.svg) no-repeat center;
+    background-position-x: 95%;
+    border: 2px solid var(--Red400);
+}
+.error::placeholder{
+    color: var(--Red400);
 }
