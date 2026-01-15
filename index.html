@@ -19,10 +19,22 @@
         </div>
         <section class="signup">
             <form action="#" method="post">
-                <input type="text" name="firstName" id="firstName" class="inputSignup" placeholder="First Name" required value="">
-                <input type="text" name="lastName" id="lastName"  class="inputSignup" placeholder="Last Name" required>
-                <input type="email" name="email" id="email" class="inputSignup"placeholder="Email Address" required>
-                <input type="password" name="password" id="password" class='inputSignup' placeholder="Password" required>
+                <div class="contexts">
+                    <input type="text" name="firstName" id="firstName" class="inputSignup spacing-bottom" placeholder="First Name" required>
+                    <p class="context-error">First Name cannot be empty</p>
+                </div>
+                <div class="contexts">
+                    <input type="text" name="lastName" id="lastName"  class="inputSignup spacing-bottom" placeholder="Last Name" required>
+                    <p class="context-error">Last Name cannot be empty</p>
+                </div>
+                <div class="contexts">
+                    <input type="email" name="email" id="email" class="inputSignup spacing-bottom"placeholder="Email Address" required>
+                    <p class="context-error">Looks like this is not an email</p>
+                </div>
+                <div class="contexts">
+                    <input type="password" name="password" id="password" class='inputSignup spacing-bottom' placeholder="Password" required>
+                    <p class="context-error">Password cannot be empty</p>
+                </div>
                 <input type="submit" value="Claim Your Free Trial" class="inputSignup" id="submit">
             </form>
             <p class="termservice">By clicking the button, you are agreeing to our <a href="#">Terms and Services</a></p>

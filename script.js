@@ -1,20 +1,38 @@
+let contexts = document.querySelectorAll('.contexts')
 let inputs = document.querySelectorAll('.inputSignup')
 let submit = document.querySelector('#submit')
 let placeholders = [['firstName', 'First Name'], ['lastName', 'Last Name'], ['email', 'Email Address'], ['password', 'Password']]
 
 let validationForms = function(){
-    for(let i = 0; i < inputs.length; i++)
+    for(let c = 0; c < contexts.length; c++)
     {
-        if(!inputs[i].classList.contains('error') && inputs[i].value === '')
-        {
-            inputs[i].classList.add('error');
+        let child = contexts[c].lastElementChild
 
-            if(inputs[i].id == 'email'){
-                inputs[i].placeholder = 'email@example/com'
-            }
-            else{
-                inputs[i].placeholder = '';
-            }
+        for(let i = 0; i < inputs.length; i++)
+        {
+            if(!inputs[i].classList.contains('error') && inputs[i].value === '')
+            {
+                inputs[i].classList.remove('spacing-bottom')
+                
+                if(contexts[c].contains(inputs[i]))
+                {
+                    if(child.className == 'context-error')
+                    {
+                        child.style.display = 'block'   
+                    }
+    
+                    inputs[i].classList.add('error');
+
+                    if(inputs[i].id === 'email')
+                    {
+                        inputs[i].placeholder = 'email@example/com'
+                    }
+                    else
+                    {
+                        inputs[i].placeholder = '';
+                    }
+                }
+            }   
         }
     }
 }
@@ -35,8 +53,15 @@ for(let i = 0; i < inputs.length; i++){
     {
         if(inputs[i].classList.contains('error'))
         {
-            inputs[i].classList.remove('error')
+            for(let c = 0; c < contexts.length; c++)
+            {
+                let child = contexts[c].lastElementChild
+                inputs[i].classList.remove('error')
+                inputs[i].classList.add('spacing-bottom')
+                child.style.display = 'none'
+            }
         }
+
     })
 }
 
