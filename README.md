@@ -1,2 +1,2 @@
-# Tela-de-Login
-Projeto de uma Tela de Login - Frondend Mentor
+# Signup-Screen
+Projeto de uma Tela de Cadastro com Validação - Frondend Mentor
